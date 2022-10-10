@@ -1,16 +1,18 @@
+import { StyledCard } from './styles/Card.styled';
+
 export default function Card({ item: { id, title, body, image } }) {
   return (
-    <div>
-      <div>
-        <h2>{title}</h2>
-        <p>{body}</p>
-      </div>
+    <StyledCard layout={id % 2 === 0 && 'row-reverse'}>
       
-      <div>
-        <img src={`./images/${image}`} alt="" />
+        <div>
+          <h2>{title}</h2>
+          <p>{body}</p>
+        </div>
 
-      </div>
-
-    </div>
-  )
+        <div>
+          <img src={`/src/images/${image}`} alt={`${image}`} />
+        </div>
+      
+    </StyledCard>
+  );
 }
